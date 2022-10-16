@@ -1,29 +1,18 @@
 import Router from "express";
 
-import { UsersRepository } from "../modules/users/repositories/UsersRepository.js";
-
 const usersRouters = Router();
+
+import { createUserController } from "../modules/users/usecases/CreateUser/index.js";
+import { listUsersController } from "../modules/users/usecases/ListUsers/index.js";
 
 // Rota de criação de usuários
 usersRouters.post("/users", (request, response) => {
-    const { name, username, email, password } = request.body;
-
-    const usersRepository = new UsersRepository();
-
-    const user = usersRepository.create({ name, username, email, password })
-
-   
-    return response.json(user);
-})
+  return createUserController.handle(request, response);
+});
 
 // Rota de listagem de usuários
 usersRouters.get("/users", (request, response) => {
-    const usersRepository = new UsersRepository();
-    const users = usersRepository.list();
-    return response.json(users);
-
+  return listUsersController.handle(request, response);
 });
-
-
 
 export default usersRouters;

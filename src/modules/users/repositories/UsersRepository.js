@@ -1,31 +1,39 @@
-import {
-    User
-} from "../models/User.js";
+import { User } from "../models/User.js";
 
 export class UsersRepository {
-    users;
+  users;
 
-    constructor() {
-       this.users = [];
+  static INSTANCE;
+
+  constructor() {
+    this.users = [];
+  }
+
+  static getInstance() {
+    if (!UsersRepository.INSTANCE) {
+      UsersRepository.INSTANCE = new UsersRepository();
     }
 
-    create ({ name, username, email, password }) {
-        const user = new User();
+    return UsersRepository.INSTANCE;
+  }
 
-        Object.assign(user, {
-            name,
-            username,
-            email,
-            password,
-            created_at: new Date(),
-        });
+  create({ name, username, email, password }) {
+    const user = new User();
 
-        this.users.push(user);
+    Object.assign(user, {
+      name,
+      username,
+      email,
+      password,
+      created_at: new Date(),
+    });
 
-        return user;
-    }
+    this.users.push(user);
 
-    list() {
-        return this.users;
-    }
+    return user;
+  }
+
+  list() {
+    return this.users;
+  }
 }
