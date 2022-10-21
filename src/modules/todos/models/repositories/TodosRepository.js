@@ -30,4 +30,7 @@ export class TodosRepository{
         this.todos.push(todo);
         return todo;
     }
+    findAllByUsername(username){
+        return this.todos.filter((todo) => todo.username === username);
+    }
 }

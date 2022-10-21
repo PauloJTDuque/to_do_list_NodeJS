@@ -9,6 +9,14 @@ export class CreateUserUseCase {
     // Não posso ter o mesmo username que outro usuário
     // Não posso ter o mesmo e-mail que outro usuário
 
+    const usernameAlreadyTaken = this.usersRepository.findByUsername(username);
+
+    const emailAlreadyTaken = this.usersRepository.findByEmail(email);
+
+    if (usernameAlreadyTaken || emailAlreadyTaken) {
+      throw new Error( "User already exists");
+    }
+
     const user = this.usersRepository.create({
       name,
       username,
