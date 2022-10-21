@@ -11,6 +11,8 @@ const findAllByUserUseCase = new FindAllByUserUseCase(
     usersRepository,
     todosRepository
 );
-const findAllByUserController = new FindAllByUserController(findAllByUserUseCase);
+const findAllByUserController = new FindAllByUserController(
+    findAllByUserUseCase
+);
 
 export { findAllByUserController };
