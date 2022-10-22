@@ -14,7 +14,7 @@ export class FindAllByUserUseCase{
         if(!user) {
             throw new Error("User not found");
         }
-        const todos = this.todosRepository.findAllByUser();
+        const todos = this.todosRepository.findAllByUser(user.username);
 
         return todos;
     }

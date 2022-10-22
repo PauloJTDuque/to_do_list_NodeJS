@@ -8,7 +8,7 @@ todosRoutes.post("/todos", (request, response) =>{
     return createTodoController.handle(request, response);
 });
 
-todosRoutes.get("/todos", (request, response) =>{
+todosRoutes.get("/todos/:username", (request, response) =>{
     return findAllByUserController.handle(request, response);
 })
 export default todosRoutes;

@@ -6,7 +6,7 @@ export class FindAllByUserController {
     }
 
     handle(request, response) {
-       const { username } = request.body;
+       const { username } = request.params;
 
        const todos = this.findAllByUsersUseCase.execute(username);
 
