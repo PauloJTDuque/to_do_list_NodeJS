@@ -5,7 +5,7 @@ import todosRoutes from "../routes/TodosRoutes.js";
 
 const routes = Router();
 
-routes.use(usersRouters);
-routes.use(todosRoutes);
+routes.use("/users", usersRouters);
+routes.use("/todos", todosRoutes);
 
 export default routes;

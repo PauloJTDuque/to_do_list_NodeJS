@@ -1,3 +1,5 @@
+import { AppException } from "../../../../application/errors/AppException.js";
+
 import { UsersRepository } from "../../repositories/UsersRepository.js";
 
 export class CreateUserUseCase {
@@ -14,7 +16,7 @@ export class CreateUserUseCase {
     const emailAlreadyTaken = this.usersRepository.findByEmail(email);
 
     if (usernameAlreadyTaken || emailAlreadyTaken) {
-      throw new Error( "User already exists");
+      throw new AppException(400, "User already exists");
     }
 
     const user = this.usersRepository.create({
