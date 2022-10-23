@@ -41,7 +41,10 @@ export class TodosRepository{
 
     deleteById(id){
         const index = this.todos.find((todo) => todo.id === id); 
-        this.todos.excluir
+
+        this.todos.splice(index, 1);
+
+        return;
     }
 
 }
