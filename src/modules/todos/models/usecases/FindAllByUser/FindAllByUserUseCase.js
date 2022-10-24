@@ -1,4 +1,4 @@
-import { AppException } from "../../../../../../application/errors/AppException.js";
+import { AppException } from "../../../../../application/errors/AppException.js";
 
 import { UsersRepository } from "../../../users/repositories/UsersRepository.js";
 import { TodosRepository } from "../../repositories/TodosRepository.js"

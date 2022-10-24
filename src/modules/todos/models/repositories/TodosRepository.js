@@ -47,4 +47,24 @@ export class TodosRepository{
         return;
     }
 
+    upateById({id, description, deadline}) {
+        const index = this.todos.findIndex((todo) => todo.id === id);
+
+        Object.assign(this.todos[index], {
+            description,
+            deadline,
+        });
+        return this.todos[index];
+    }
+
+    markAsDone(id) {
+        const todo = this.todos.find((todo) => todo.id === id)
+
+       Object.assign(todo, {
+            done: true
+       })
+
+       return todo;
+    }
+
 }
