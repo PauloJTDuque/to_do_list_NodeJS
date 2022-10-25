@@ -8,21 +8,21 @@ datasource db {
 }
 
 model todos {
-  id          String   @id @default(auto()) @map("_id") @db.ObjectId
-  created_at  DateTime @db.Date
-  deadline    DateTime @db.Date
+  id          String  @id @default(auto()) @map("_id") @db.ObjectId
+  created_at  String
+  deadline    String
   description String
   done        Boolean
-  todoId      String   @unique(map: "findById")
+  todoId      String  @unique(map: "findById")
   username    String
 }
 
 model users {
-  id         String   @id @default(auto()) @map("_id") @db.ObjectId
-  created_at DateTime @db.Date
-  email      String   @unique(map: "findByEmail")
+  id         String @id @default(auto()) @map("_id") @db.ObjectId
+  created_at String
+  email      String @unique(map: "findByEmail")
   name       String
   password   String
-  userId     String   @unique(map: "findById")
-  username   String   @unique(map: "findByUsername")
+  userId     String @unique(map: "findById")
+  username   String @unique(map: "findByUsername")
 }
