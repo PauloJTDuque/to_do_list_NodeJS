@@ -1,5 +1,6 @@
 import express from "express";
-import "express-async-errors from";
+import "express-async-errors";
+
 import { AppException } from "./errors/AppException.js";
 
 import routes from "./routes.js"

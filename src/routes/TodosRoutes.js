@@ -1,7 +1,7 @@
 import Router from 'express';
 
 import { createTodoController } from '../modules/todos/models/usecases/CreateTodo/index.js';
-import { findAllByUserController } from '../modules/todos/models/usecases/CreateTodo/FindAllByUser/index.js';
+import { findAllByUserController } from '../modules/todos/models/usecases/FindAllByUser/index.js';
 import { deleteTodoByIdController } from '../modules/todos/models/usecases/DeleteTodoById/index.js';
 import { markTodoAsDoneController } from '../modules/todos/models/usecases/MarkTodoAsDone/index.js';
 import { updateTodoByIdController } from '../modules/todos/models/usecases/UpdateTodoById/UpdateTodoByIdController.js';

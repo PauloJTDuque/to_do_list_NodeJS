@@ -1,8 +1,8 @@
-import { FindAllByUserCase } from "./FindAllByUserUseCase.js"
+import { FindAllByUserUseCase } from "./FindAllByUserUseCase.js";
 
 export class FindAllByUserController {
     constructor() {
-        this.findAllByUsersUseCase = new FindAllByUserUseCase();
+        this.findAllByUserUseCase = new FindAllByUserUseCase();
     }
 
     handle(request, response) {
